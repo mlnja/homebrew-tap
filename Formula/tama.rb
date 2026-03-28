@@ -31,8 +31,6 @@ class Tama < Formula
     end
   end
 
-  depends_on "rust" => :build
-
   def install
     # Pre-built binary: a plain file named tama-<os>-<arch> (from the release tarball)
     binary = Dir["tama-*"].find { |f| File.file?(f) && !f.end_with?(".tar.gz", ".sha256") }
@@ -40,9 +38,7 @@ class Tama < Formula
     if binary
       bin.install binary => "tama"
     else
-      ohai "No pre-built binary for this platform — building from source (takes a few minutes)"
-      system "cargo", "build", "--release", "--bin", "tama"
-      bin.install "target/release/tama"
+      odie "No pre-built binary for this platform. Install Rust (https://rustup.rs) then rerun with --build-from-source"
     end
   end
 

@@ -1,16 +1,25 @@
-# MLOps.Ninja Tap
+# MLnja Tap
 
-## How do I install these formulae?
+## tama
 
-`brew install mlops-ninja/tap/<formula>`
+Multi-agent AI framework — build, run, and trace agent pipelines from the command line.
 
-Or `brew tap mlops-ninja/tap` and then `brew install <formula>`.
+```bash
+brew install mlnja/tap/tama
+```
 
-Or, in a `brew bundle` `Brewfile`:
+Or explicitly tap first:
+
+```bash
+brew tap mlnja/tap
+brew install tama
+```
+
+Or in a `Brewfile`:
 
 ```ruby
-tap "mlops-ninja/tap"
-brew "<formula>"
+tap "mlnja/tap"
+brew "tama"
 ```
 
 ## Documentation
