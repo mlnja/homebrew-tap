@@ -2,32 +2,32 @@ class Tama < Formula
   desc "Multi-agent AI framework — build, run, and trace agent pipelines from the command line"
   homepage "https://tama.mlops.ninja"
   license "Elastic-2.0"
-  version "0.0.5"
+  version "0.0.7"
 
   # ── Source tarball — default fallback for unsupported platforms ──────────────
   url "https://github.com/mlnja/tama/archive/refs/tags/v#{version}.tar.gz"
-  sha256 "1f746ded27fb589459a854286d208423836aadc035e8676e44eba570c3cdfb28" # source
+  sha256 "82e82cc4a7c1250d87b5b0b6ee89a266c912e8889076a4b525e82f7430ce4fb2" # source
 
   # ── Pre-built binaries (override the source url on supported platforms) ──────
   on_macos do
     on_arm do
       url "https://github.com/mlnja/tama/releases/download/v#{version}/tama-darwin-arm64.tar.gz"
-      sha256 "47daff202f0623b941850368e3580a840a2be1aa1693688de579a31c0cd81561" # darwin-arm64
+      sha256 "d0a0a04a428552a26422d526ea061804be34c267b49263f342ed34d17c65b13b" # darwin-arm64
     end
     on_intel do
       url "https://github.com/mlnja/tama/releases/download/v#{version}/tama-darwin-amd64.tar.gz"
-      sha256 "7993e5318556561c4fc58a7cff9906d24043f2ca2a349c90c90b1b9d9a5a0a98" # darwin-amd64
+      sha256 "a87ad638b322091a36436612a283ed873521d49397036714a46a28e2a6266b2d" # darwin-amd64
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/mlnja/tama/releases/download/v#{version}/tama-linux-arm64.tar.gz"
-      sha256 "6bd1f184d63e95a7854b473e7fe8d6cd348015335ceb38968b226b98d0d9ead5" # linux-arm64
+      sha256 "7010a10a3fb031c296e1f9c0c0ba29d7930013a0bfec386279409766eee0f8c4" # linux-arm64
     end
     on_intel do
       url "https://github.com/mlnja/tama/releases/download/v#{version}/tama-linux-amd64.tar.gz"
-      sha256 "ab45787b61b853a8500f5e5be02e2b0af1762347f7230ee1adcad118ae7d390a" # linux-amd64
+      sha256 "88f970a569e0c004e7f88e0e7b16a191d3f86045411e9762d8eedb9b98fe611e" # linux-amd64
     end
   end
 
