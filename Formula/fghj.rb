@@ -1,7 +1,7 @@
 class Fghj < Formula
   desc "Local dev environments scoped to a user flow, not your whole fleet"
   homepage "https://github.com/mlnja/fghj"
-  version "0.1.15"
+  version "0.1.24"
   license "MIT"
 
   # fghj (and its root daemon, fghjd) is macOS-only today: fghjd shells out
@@ -10,22 +10,19 @@ class Fghj < Formula
   # fallback is offered since building from source wouldn't run anywhere
   # else either.
   depends_on :macos
+  # Apple Silicon only: there is no darwin-amd64 build.
+  depends_on arch: :arm64
 
   on_macos do
     on_arm do
       url "https://github.com/mlnja/fghj/releases/download/v#{version}/fghj-darwin-arm64.tar.gz"
-      sha256 "35736f8f775ed5b64fa515e08c57a183508fb8ef3afeba75098192f3702ea9ba" # darwin-arm64
-    end
-    on_intel do
-      url "https://github.com/mlnja/fghj/releases/download/v#{version}/fghj-darwin-amd64.tar.gz"
-      sha256 "91ea7ce7518476e1820cfd574f04293bf736ce81721500931b2d1d103562933f" # darwin-amd64
+      sha256 "e767eb5cbf0679f7eddbe1556908c049654c2f8cb0983385c791110794b25cf8" # darwin-arm64
     end
   end
 
   def install
-    arch = Hardware::CPU.arm? ? "arm64" : "amd64"
-    bin.install "fghj-darwin-#{arch}" => "fghj"
-    bin.install "fghjd-darwin-#{arch}" => "fghjd"
+    bin.install "fghj-darwin-arm64" => "fghj"
+    bin.install "fghjd-darwin-arm64" => "fghjd"
   end
 
   service do
