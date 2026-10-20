@@ -1,7 +1,7 @@
 class Fghj < Formula
   desc "Local dev environments scoped to a user flow, not your whole fleet"
   homepage "https://github.com/mlnja/fghj"
-  version "0.1.39"
+  version "0.1.40"
   license "MIT"
 
   # fghj (and its root daemon, fghjd) is macOS-only today: fghjd shells out
@@ -16,7 +16,7 @@ class Fghj < Formula
   on_macos do
     on_arm do
       url "https://github.com/mlnja/fghj/releases/download/v#{version}/fghj-darwin-arm64.tar.gz"
-      sha256 "476243c0e6b3b60617bb6c0c5098bfc43143716f01f541b097a65b2c6b9abd9a" # darwin-arm64
+      sha256 "cdba461806bd0d8202b1d4891f09aec588c4b646d32e0d8ff9634d708412921a" # darwin-arm64
     end
   end
 
